@@ -1,0 +1,2423 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+/* base contains the reset css and makes sure styles are consistent across browsers, such as h1, etc.  Base styles should only target html tags.   */
+
+/* ! tailwindcss v3.4.3 | MIT License | https://tailwindcss.com   */
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  /* 1 */
+  border-width: 0;
+  /* 2 */
+  border-style: solid;
+  /* 2 */
+  border-color: #e5e7eb;
+  /* 2 */
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. Use a consistent sensible line-height in all browsers.
+2. Prevent adjustments of font size after orientation changes in iOS.
+3. Use a more readable tab size.
+4. Use the user's configured `sans` font-family by default.
+5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
+7. Disable tap highlights on iOS
+*/
+
+html,
+:host {
+  line-height: 1.5;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -moz-tab-size: 4;
+  /* 3 */
+  -o-tab-size: 4;
+     tab-size: 4;
+  /* 3 */
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 4 */
+  font-feature-settings: normal;
+  /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
+  -webkit-tap-highlight-color: transparent;
+  /* 7 */
+}
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+
+body {
+  margin: 0;
+  /* 1 */
+  line-height: inherit;
+  /* 2 */
+}
+
+/*
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+3. Ensure horizontal rules are visible by default.
+*/
+
+hr {
+  height: 0;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  border-top-width: 1px;
+  /* 3 */
+}
+
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font-family by default.
+2. Use the user's configured `mono` font-feature-settings by default.
+3. Use the user's configured `mono` font-variation-settings by default.
+4. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-feature-settings: normal;
+  /* 2 */
+  font-variation-settings: normal;
+  /* 3 */
+  font-size: 1em;
+  /* 4 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-feature-settings: inherit;
+  /* 1 */
+  font-variation-settings: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  font-weight: inherit;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  letter-spacing: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+input:where([type='button']),
+input:where([type='reset']),
+input:where([type='submit']) {
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Reset default styling for dialogs.
+*/
+
+dialog {
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
+}
+
+/* Base styles should not have any classes. They should only target HTML tags. */
+
+html {
+  font-family: "Quicksand", sans-serif;
+}
+
+h1{
+  font-size: 3.75rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+h2{
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+h3{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+}
+
+h4{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+}
+
+h5{
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+h6{
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+*, ::before, ::after{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+::backdrop{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-gradient-from-position:  ;
+  --tw-gradient-via-position:  ;
+  --tw-gradient-to-position:  ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+  --tw-contain-size:  ;
+  --tw-contain-layout:  ;
+  --tw-contain-paint:  ;
+  --tw-contain-style:  ;
+}
+
+/* components are things like buttons */
+
+.container{
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  .container{
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px;
+  }
+}
+
+.btn{
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+btn-slate-50{
+  background-color: #f8fafc;
+}
+
+btn-slate-100{
+  background-color: #f1f5f9;
+}
+
+btn-slate-200{
+  background-color: #e2e8f0;
+}
+
+btn-slate-300{
+  background-color: #cbd5e1;
+}
+
+btn-slate-400{
+  background-color: #94a3b8;
+}
+
+btn-slate-500{
+  background-color: #64748b;
+}
+
+btn-slate-600{
+  background-color: #475569;
+}
+
+btn-slate-700{
+  background-color: #334155;
+}
+
+btn-slate-800{
+  background-color: #1e293b;
+}
+
+btn-slate-900{
+  background-color: #0f172a;
+}
+
+btn-slate-950{
+  background-color: #020617;
+}
+
+btn-gray-50{
+  background-color: #f9fafb;
+}
+
+btn-gray-100{
+  background-color: #f3f4f6;
+}
+
+btn-gray-200{
+  background-color: #e5e7eb;
+}
+
+btn-gray-300{
+  background-color: #d1d5db;
+}
+
+btn-gray-400{
+  background-color: #9ca3af;
+}
+
+btn-gray-500{
+  background-color: #6b7280;
+}
+
+btn-gray-600{
+  background-color: #4b5563;
+}
+
+btn-gray-700{
+  background-color: #374151;
+}
+
+btn-gray-800{
+  background-color: #1f2937;
+}
+
+btn-gray-900{
+  background-color: #111827;
+}
+
+btn-gray-950{
+  background-color: #030712;
+}
+
+btn-zinc-50{
+  background-color: #fafafa;
+}
+
+btn-zinc-100{
+  background-color: #f4f4f5;
+}
+
+btn-zinc-200{
+  background-color: #e4e4e7;
+}
+
+btn-zinc-300{
+  background-color: #d4d4d8;
+}
+
+btn-zinc-400{
+  background-color: #a1a1aa;
+}
+
+btn-zinc-500{
+  background-color: #71717a;
+}
+
+btn-zinc-600{
+  background-color: #52525b;
+}
+
+btn-zinc-700{
+  background-color: #3f3f46;
+}
+
+btn-zinc-800{
+  background-color: #27272a;
+}
+
+btn-zinc-900{
+  background-color: #18181b;
+}
+
+btn-zinc-950{
+  background-color: #09090b;
+}
+
+btn-neutral-50{
+  background-color: #fafafa;
+}
+
+btn-neutral-100{
+  background-color: #f5f5f5;
+}
+
+btn-neutral-200{
+  background-color: #e5e5e5;
+}
+
+btn-neutral-300{
+  background-color: #d4d4d4;
+}
+
+btn-neutral-400{
+  background-color: #a3a3a3;
+}
+
+btn-neutral-500{
+  background-color: #737373;
+}
+
+btn-neutral-600{
+  background-color: #525252;
+}
+
+btn-neutral-700{
+  background-color: #404040;
+}
+
+btn-neutral-800{
+  background-color: #262626;
+}
+
+btn-neutral-900{
+  background-color: #171717;
+}
+
+btn-neutral-950{
+  background-color: #0a0a0a;
+}
+
+btn-stone-50{
+  background-color: #fafaf9;
+}
+
+btn-stone-100{
+  background-color: #f5f5f4;
+}
+
+btn-stone-200{
+  background-color: #e7e5e4;
+}
+
+btn-stone-300{
+  background-color: #d6d3d1;
+}
+
+btn-stone-400{
+  background-color: #a8a29e;
+}
+
+btn-stone-500{
+  background-color: #78716c;
+}
+
+btn-stone-600{
+  background-color: #57534e;
+}
+
+btn-stone-700{
+  background-color: #44403c;
+}
+
+btn-stone-800{
+  background-color: #292524;
+}
+
+btn-stone-900{
+  background-color: #1c1917;
+}
+
+btn-stone-950{
+  background-color: #0c0a09;
+}
+
+btn-red-50{
+  background-color: #fef2f2;
+}
+
+btn-red-100{
+  background-color: #fee2e2;
+}
+
+btn-red-200{
+  background-color: #fecaca;
+}
+
+btn-red-300{
+  background-color: #fca5a5;
+}
+
+btn-red-400{
+  background-color: #f87171;
+}
+
+btn-red-500{
+  background-color: #ef4444;
+}
+
+btn-red-600{
+  background-color: #dc2626;
+}
+
+btn-red-700{
+  background-color: #b91c1c;
+}
+
+btn-red-800{
+  background-color: #991b1b;
+}
+
+btn-red-900{
+  background-color: #7f1d1d;
+}
+
+btn-red-950{
+  background-color: #450a0a;
+}
+
+btn-orange-50{
+  background-color: #fff7ed;
+}
+
+btn-orange-100{
+  background-color: #ffedd5;
+}
+
+btn-orange-200{
+  background-color: #fed7aa;
+}
+
+btn-orange-300{
+  background-color: #fdba74;
+}
+
+btn-orange-400{
+  background-color: #fb923c;
+}
+
+btn-orange-500{
+  background-color: #f97316;
+}
+
+btn-orange-600{
+  background-color: #ea580c;
+}
+
+btn-orange-700{
+  background-color: #c2410c;
+}
+
+btn-orange-800{
+  background-color: #9a3412;
+}
+
+btn-orange-900{
+  background-color: #7c2d12;
+}
+
+btn-orange-950{
+  background-color: #431407;
+}
+
+btn-amber-50{
+  background-color: #fffbeb;
+}
+
+btn-amber-100{
+  background-color: #fef3c7;
+}
+
+btn-amber-200{
+  background-color: #fde68a;
+}
+
+btn-amber-300{
+  background-color: #fcd34d;
+}
+
+btn-amber-400{
+  background-color: #fbbf24;
+}
+
+btn-amber-500{
+  background-color: #f59e0b;
+}
+
+btn-amber-600{
+  background-color: #d97706;
+}
+
+btn-amber-700{
+  background-color: #b45309;
+}
+
+btn-amber-800{
+  background-color: #92400e;
+}
+
+btn-amber-900{
+  background-color: #78350f;
+}
+
+btn-amber-950{
+  background-color: #451a03;
+}
+
+btn-yellow-50{
+  background-color: #fefce8;
+}
+
+btn-yellow-100{
+  background-color: #fef9c3;
+}
+
+btn-yellow-200{
+  background-color: #fef08a;
+}
+
+btn-yellow-300{
+  background-color: #fde047;
+}
+
+btn-yellow-400{
+  background-color: #facc15;
+}
+
+btn-yellow-500{
+  background-color: #eab308;
+}
+
+btn-yellow-600{
+  background-color: #ca8a04;
+}
+
+btn-yellow-700{
+  background-color: #a16207;
+}
+
+btn-yellow-800{
+  background-color: #854d0e;
+}
+
+btn-yellow-900{
+  background-color: #713f12;
+}
+
+btn-yellow-950{
+  background-color: #422006;
+}
+
+btn-lime-50{
+  background-color: #f7fee7;
+}
+
+btn-lime-100{
+  background-color: #ecfccb;
+}
+
+btn-lime-200{
+  background-color: #d9f99d;
+}
+
+btn-lime-300{
+  background-color: #bef264;
+}
+
+btn-lime-400{
+  background-color: #a3e635;
+}
+
+btn-lime-500{
+  background-color: #84cc16;
+}
+
+btn-lime-600{
+  background-color: #65a30d;
+}
+
+btn-lime-700{
+  background-color: #4d7c0f;
+}
+
+btn-lime-800{
+  background-color: #3f6212;
+}
+
+btn-lime-900{
+  background-color: #365314;
+}
+
+btn-lime-950{
+  background-color: #1a2e05;
+}
+
+btn-green-50{
+  background-color: #f0fdf4;
+}
+
+btn-green-100{
+  background-color: #dcfce7;
+}
+
+btn-green-200{
+  background-color: #bbf7d0;
+}
+
+btn-green-300{
+  background-color: #86efac;
+}
+
+btn-green-400{
+  background-color: #4ade80;
+}
+
+btn-green-500{
+  background-color: #22c55e;
+}
+
+btn-green-600{
+  background-color: #16a34a;
+}
+
+btn-green-700{
+  background-color: #15803d;
+}
+
+btn-green-800{
+  background-color: #166534;
+}
+
+btn-green-900{
+  background-color: #14532d;
+}
+
+btn-green-950{
+  background-color: #052e16;
+}
+
+btn-emerald-50{
+  background-color: #ecfdf5;
+}
+
+btn-emerald-100{
+  background-color: #d1fae5;
+}
+
+btn-emerald-200{
+  background-color: #a7f3d0;
+}
+
+btn-emerald-300{
+  background-color: #6ee7b7;
+}
+
+btn-emerald-400{
+  background-color: #34d399;
+}
+
+btn-emerald-500{
+  background-color: #10b981;
+}
+
+btn-emerald-600{
+  background-color: #059669;
+}
+
+btn-emerald-700{
+  background-color: #047857;
+}
+
+btn-emerald-800{
+  background-color: #065f46;
+}
+
+btn-emerald-900{
+  background-color: #064e3b;
+}
+
+btn-emerald-950{
+  background-color: #022c22;
+}
+
+btn-teal-50{
+  background-color: #f0fdfa;
+}
+
+btn-teal-100{
+  background-color: #ccfbf1;
+}
+
+btn-teal-200{
+  background-color: #99f6e4;
+}
+
+btn-teal-300{
+  background-color: #5eead4;
+}
+
+btn-teal-400{
+  background-color: #2dd4bf;
+}
+
+btn-teal-500{
+  background-color: #14b8a6;
+}
+
+btn-teal-600{
+  background-color: #0d9488;
+}
+
+btn-teal-700{
+  background-color: #0f766e;
+}
+
+btn-teal-800{
+  background-color: #115e59;
+}
+
+btn-teal-900{
+  background-color: #134e4a;
+}
+
+btn-teal-950{
+  background-color: #042f2e;
+}
+
+btn-cyan-50{
+  background-color: #ecfeff;
+}
+
+btn-cyan-100{
+  background-color: #cffafe;
+}
+
+btn-cyan-200{
+  background-color: #a5f3fc;
+}
+
+btn-cyan-300{
+  background-color: #67e8f9;
+}
+
+btn-cyan-400{
+  background-color: #22d3ee;
+}
+
+btn-cyan-500{
+  background-color: #06b6d4;
+}
+
+btn-cyan-600{
+  background-color: #0891b2;
+}
+
+btn-cyan-700{
+  background-color: #0e7490;
+}
+
+btn-cyan-800{
+  background-color: #155e75;
+}
+
+btn-cyan-900{
+  background-color: #164e63;
+}
+
+btn-cyan-950{
+  background-color: #083344;
+}
+
+btn-sky-50{
+  background-color: #f0f9ff;
+}
+
+btn-sky-100{
+  background-color: #e0f2fe;
+}
+
+btn-sky-200{
+  background-color: #bae6fd;
+}
+
+btn-sky-300{
+  background-color: #7dd3fc;
+}
+
+btn-sky-400{
+  background-color: #38bdf8;
+}
+
+btn-sky-500{
+  background-color: #0ea5e9;
+}
+
+btn-sky-600{
+  background-color: #0284c7;
+}
+
+btn-sky-700{
+  background-color: #0369a1;
+}
+
+btn-sky-800{
+  background-color: #075985;
+}
+
+btn-sky-900{
+  background-color: #0c4a6e;
+}
+
+btn-sky-950{
+  background-color: #082f49;
+}
+
+btn-blue-50{
+  background-color: #eff6ff;
+}
+
+btn-blue-100{
+  background-color: #dbeafe;
+}
+
+btn-blue-200{
+  background-color: #bfdbfe;
+}
+
+btn-blue-300{
+  background-color: #93c5fd;
+}
+
+btn-blue-400{
+  background-color: #60a5fa;
+}
+
+btn-blue-500{
+  background-color: #3b82f6;
+}
+
+btn-blue-600{
+  background-color: #2563eb;
+}
+
+btn-blue-700{
+  background-color: #1d4ed8;
+}
+
+btn-blue-800{
+  background-color: #1e40af;
+}
+
+btn-blue-900{
+  background-color: #1e3a8a;
+}
+
+btn-blue-950{
+  background-color: #172554;
+}
+
+btn-indigo-50{
+  background-color: #eef2ff;
+}
+
+btn-indigo-100{
+  background-color: #e0e7ff;
+}
+
+btn-indigo-200{
+  background-color: #c7d2fe;
+}
+
+btn-indigo-300{
+  background-color: #a5b4fc;
+}
+
+btn-indigo-400{
+  background-color: #818cf8;
+}
+
+btn-indigo-500{
+  background-color: #6366f1;
+}
+
+btn-indigo-600{
+  background-color: #4f46e5;
+}
+
+btn-indigo-700{
+  background-color: #4338ca;
+}
+
+btn-indigo-800{
+  background-color: #3730a3;
+}
+
+btn-indigo-900{
+  background-color: #312e81;
+}
+
+btn-indigo-950{
+  background-color: #1e1b4b;
+}
+
+btn-violet-50{
+  background-color: #f5f3ff;
+}
+
+btn-violet-100{
+  background-color: #ede9fe;
+}
+
+btn-violet-200{
+  background-color: #ddd6fe;
+}
+
+btn-violet-300{
+  background-color: #c4b5fd;
+}
+
+btn-violet-400{
+  background-color: #a78bfa;
+}
+
+btn-violet-500{
+  background-color: #8b5cf6;
+}
+
+btn-violet-600{
+  background-color: #7c3aed;
+}
+
+btn-violet-700{
+  background-color: #6d28d9;
+}
+
+btn-violet-800{
+  background-color: #5b21b6;
+}
+
+btn-violet-900{
+  background-color: #4c1d95;
+}
+
+btn-violet-950{
+  background-color: #2e1065;
+}
+
+btn-purple-50{
+  background-color: #faf5ff;
+}
+
+btn-purple-100{
+  background-color: #f3e8ff;
+}
+
+btn-purple-200{
+  background-color: #e9d5ff;
+}
+
+btn-purple-300{
+  background-color: #d8b4fe;
+}
+
+btn-purple-400{
+  background-color: #c084fc;
+}
+
+btn-purple-500{
+  background-color: #a855f7;
+}
+
+btn-purple-600{
+  background-color: #9333ea;
+}
+
+btn-purple-700{
+  background-color: #7e22ce;
+}
+
+btn-purple-800{
+  background-color: #6b21a8;
+}
+
+btn-purple-900{
+  background-color: #581c87;
+}
+
+btn-purple-950{
+  background-color: #3b0764;
+}
+
+btn-fuchsia-50{
+  background-color: #fdf4ff;
+}
+
+btn-fuchsia-100{
+  background-color: #fae8ff;
+}
+
+btn-fuchsia-200{
+  background-color: #f5d0fe;
+}
+
+btn-fuchsia-300{
+  background-color: #f0abfc;
+}
+
+btn-fuchsia-400{
+  background-color: #e879f9;
+}
+
+btn-fuchsia-500{
+  background-color: #d946ef;
+}
+
+btn-fuchsia-600{
+  background-color: #c026d3;
+}
+
+btn-fuchsia-700{
+  background-color: #a21caf;
+}
+
+btn-fuchsia-800{
+  background-color: #86198f;
+}
+
+btn-fuchsia-900{
+  background-color: #701a75;
+}
+
+btn-fuchsia-950{
+  background-color: #4a044e;
+}
+
+btn-pink-50{
+  background-color: #fdf2f8;
+}
+
+btn-pink-100{
+  background-color: #fce7f3;
+}
+
+btn-pink-200{
+  background-color: #fbcfe8;
+}
+
+btn-pink-300{
+  background-color: #f9a8d4;
+}
+
+btn-pink-400{
+  background-color: #f472b6;
+}
+
+btn-pink-500{
+  background-color: #ec4899;
+}
+
+btn-pink-600{
+  background-color: #db2777;
+}
+
+btn-pink-700{
+  background-color: #be185d;
+}
+
+btn-pink-800{
+  background-color: #9d174d;
+}
+
+btn-pink-900{
+  background-color: #831843;
+}
+
+btn-pink-950{
+  background-color: #500724;
+}
+
+btn-rose-50{
+  background-color: #fff1f2;
+}
+
+btn-rose-100{
+  background-color: #ffe4e6;
+}
+
+btn-rose-200{
+  background-color: #fecdd3;
+}
+
+btn-rose-300{
+  background-color: #fda4af;
+}
+
+btn-rose-400{
+  background-color: #fb7185;
+}
+
+btn-rose-500{
+  background-color: #f43f5e;
+}
+
+btn-rose-600{
+  background-color: #e11d48;
+}
+
+btn-rose-700{
+  background-color: #be123c;
+}
+
+btn-rose-800{
+  background-color: #9f1239;
+}
+
+btn-rose-900{
+  background-color: #881337;
+}
+
+btn-rose-950{
+  background-color: #4c0519;
+}
+
+.menu-item{
+  position: relative;
+  display: flex;
+  height: 100%;
+  cursor: pointer;
+  align-items: center;
+  padding: 1rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(251 207 232 / var(--tw-text-opacity));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-item:hover{
+  background-color: rgb(255 255 255 / 0.1);
+  --tw-text-opacity: 1;
+  color: rgb(228 228 231 / var(--tw-text-opacity));
+}
+
+/* utilites are the classes we use from tailwind css, such as bg-black.  Atomic classes that is something simple like a size with a couple of css properties, such as padding, margin, etc. */
+
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.fixed{
+  position: fixed;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.relative{
+  position: relative;
+}
+
+.sticky{
+  position: sticky;
+}
+
+.-top-8{
+  top: -2rem;
+}
+
+.left-0{
+  left: 0px;
+}
+
+.left-1\/2{
+  left: 50%;
+}
+
+.right-0{
+  right: 0px;
+}
+
+.top-0{
+  top: 0px;
+}
+
+.top-1\/2{
+  top: 50%;
+}
+
+.top-24{
+  top: 6rem;
+}
+
+.top-\[62px\]{
+  top: 62px;
+}
+
+.top-full{
+  top: 100%;
+}
+
+.z-10{
+  z-index: 10;
+}
+
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-4{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.my-auto{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.-ml-\[8px\]{
+  margin-left: -8px;
+}
+
+.mb-5{
+  margin-bottom: 1.25rem;
+}
+
+.ml-auto{
+  margin-left: auto;
+}
+
+.mt-1{
+  margin-top: 0.25rem;
+}
+
+.mt-2{
+  margin-top: 0.5rem;
+}
+
+.mt-20{
+  margin-top: 5rem;
+}
+
+.mt-3{
+  margin-top: 0.75rem;
+}
+
+.mt-4{
+  margin-top: 1rem;
+}
+
+.mt-5{
+  margin-top: 1.25rem;
+}
+
+.mt-\[-70px\]{
+  margin-top: -70px;
+}
+
+.block{
+  display: block;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.flex{
+  display: flex;
+}
+
+.table{
+  display: table;
+}
+
+.grid{
+  display: grid;
+}
+
+.hidden{
+  display: none;
+}
+
+.h-1{
+  height: 0.25rem;
+}
+
+.h-14{
+  height: 3.5rem;
+}
+
+.h-2{
+  height: 0.5rem;
+}
+
+.h-3{
+  height: 0.75rem;
+}
+
+.h-4{
+  height: 1rem;
+}
+
+.h-80{
+  height: 20rem;
+}
+
+.h-\[calc\(100vh-200px\)\]{
+  height: calc(100vh - 200px);
+}
+
+.h-full{
+  height: 100%;
+}
+
+.min-h-\[400px\]{
+  min-height: 400px;
+}
+
+.w-1{
+  width: 0.25rem;
+}
+
+.w-12{
+  width: 3rem;
+}
+
+.w-14{
+  width: 3.5rem;
+}
+
+.w-4{
+  width: 1rem;
+}
+
+.w-8{
+  width: 2rem;
+}
+
+.w-full{
+  width: 100%;
+}
+
+.min-w-\[80\%\]{
+  min-width: 80%;
+}
+
+.max-w-screen-lg{
+  max-width: 1024px;
+}
+
+.flex-1{
+  flex: 1 1 0%;
+}
+
+.shrink{
+  flex-shrink: 1;
+}
+
+.grow{
+  flex-grow: 1;
+}
+
+.caption-bottom{
+  caption-side: bottom;
+}
+
+.border-collapse{
+  border-collapse: collapse;
+}
+
+.rotate-180{
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.rotate-90{
+  --tw-rotate: 90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.transform{
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+@keyframes ping{
+  75%, 100%{
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping{
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes wavey{
+  0%, 100%{
+    transform: scaleY(0.5);
+  }
+
+  50%{
+    transform: scaleY(1.5);
+  }
+}
+
+.animate-wavey{
+  animation: wavey 1000ms linear infinite;
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+.snap-x{
+  scroll-snap-type: x var(--tw-scroll-snap-strictness);
+}
+
+.snap-center{
+  scroll-snap-align: center;
+}
+
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.flex-col{
+  flex-direction: column;
+}
+
+.items-center{
+  align-items: center;
+}
+
+.justify-end{
+  justify-content: flex-end;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.gap-1{
+  gap: 0.25rem;
+}
+
+.gap-2{
+  gap: 0.5rem;
+}
+
+.gap-4{
+  gap: 1rem;
+}
+
+.gap-8{
+  gap: 2rem;
+}
+
+.overflow-x-auto{
+  overflow-x: auto;
+}
+
+.scroll-smooth{
+  scroll-behavior: smooth;
+}
+
+.whitespace-nowrap{
+  white-space: nowrap;
+}
+
+.rounded-full{
+  border-radius: 9999px;
+}
+
+.rounded-lg{
+  border-radius: 0.5rem;
+}
+
+.rounded-sm{
+  border-radius: 0.125rem;
+}
+
+.rounded-xl{
+  border-radius: 0.75rem;
+}
+
+.rounded-b-md{
+  border-bottom-right-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+}
+
+.rounded-l-lg{
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.border{
+  border-width: 1px;
+}
+
+.border-none{
+  border-style: none;
+}
+
+.border-white\/40{
+  border-color: rgb(255 255 255 / 0.4);
+}
+
+.border-zinc-500{
+  --tw-border-opacity: 1;
+  border-color: rgb(113 113 122 / var(--tw-border-opacity));
+}
+
+.bg-pink-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 231 243 / var(--tw-bg-opacity));
+}
+
+.bg-pink-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 207 232 / var(--tw-bg-opacity));
+}
+
+.bg-pink-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 168 212 / var(--tw-bg-opacity));
+}
+
+.bg-pink-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
+}
+
+.bg-rose-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 63 94 / var(--tw-bg-opacity));
+}
+
+.bg-white\/30{
+  background-color: rgb(255 255 255 / 0.3);
+}
+
+.bg-zinc-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(228 228 231 / var(--tw-bg-opacity));
+}
+
+.bg-zinc-800{
+  --tw-bg-opacity: 1;
+  background-color: rgb(39 39 42 / var(--tw-bg-opacity));
+}
+
+.bg-zinc-900{
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+}
+
+.bg-gradient-to-b{
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-r{
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.from-rose-500{
+  --tw-gradient-from: #f43f5e var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(244 63 94 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-sky-900{
+  --tw-gradient-from: #0c4a6e var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(12 74 110 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-cyan-900{
+  --tw-gradient-to: rgb(22 78 99 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #164e63 var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.to-pink-500{
+  --tw-gradient-to: #ec4899 var(--tw-gradient-to-position);
+}
+
+.to-teal-900{
+  --tw-gradient-to: #134e4a var(--tw-gradient-to-position);
+}
+
+.bg-cover{
+  background-size: cover;
+}
+
+.bg-fixed{
+  background-attachment: fixed;
+}
+
+.bg-center{
+  background-position: center;
+}
+
+.p-2{
+  padding: 0.5rem;
+}
+
+.p-3{
+  padding: 0.75rem;
+}
+
+.p-4{
+  padding: 1rem;
+}
+
+.px-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-2{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.pb-5{
+  padding-bottom: 1.25rem;
+}
+
+.pr-4{
+  padding-right: 1rem;
+}
+
+.pt-3{
+  padding-top: 0.75rem;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.text-2xl{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-5xl{
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.text-lg{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.font-bold{
+  font-weight: 700;
+}
+
+.italic{
+  font-style: italic;
+}
+
+.text-pink-200{
+  --tw-text-opacity: 1;
+  color: rgb(251 207 232 / var(--tw-text-opacity));
+}
+
+.text-sky-900{
+  --tw-text-opacity: 1;
+  color: rgb(12 74 110 / var(--tw-text-opacity));
+}
+
+.text-zinc-200{
+  --tw-text-opacity: 1;
+  color: rgb(228 228 231 / var(--tw-text-opacity));
+}
+
+.text-zinc-400{
+  --tw-text-opacity: 1;
+  color: rgb(161 161 170 / var(--tw-text-opacity));
+}
+
+.text-zinc-900{
+  --tw-text-opacity: 1;
+  color: rgb(24 24 27 / var(--tw-text-opacity));
+}
+
+.underline{
+  text-decoration-line: underline;
+}
+
+.placeholder-zinc-500::-moz-placeholder{
+  --tw-placeholder-opacity: 1;
+  color: rgb(113 113 122 / var(--tw-placeholder-opacity));
+}
+
+.placeholder-zinc-500::placeholder{
+  --tw-placeholder-opacity: 1;
+  color: rgb(113 113 122 / var(--tw-placeholder-opacity));
+}
+
+.caret-pink-500{
+  caret-color: #ec4899;
+}
+
+.opacity-100{
+  opacity: 1;
+}
+
+.opacity-75{
+  opacity: 0.75;
+}
+
+.shadow-md{
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-black\/20{
+  --tw-shadow-color: rgb(0 0 0 / 0.2);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.outline-pink-500{
+  outline-color: #ec4899;
+}
+
+.ring{
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.backdrop-blur-md{
+  --tw-backdrop-blur: blur(12px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-colors{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.delay-200{
+  transition-delay: 200ms;
+}
+
+.delay-300{
+  transition-delay: 300ms;
+}
+
+.ease-in-out{
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.delay-200{
+  animation-delay: 200ms;
+}
+
+.delay-300{
+  animation-delay: 300ms;
+}
+
+.caption-bottom{
+  caption-side: bottom;
+}
+
+/* A utility class can override a component or base style and a component style can override a base style. */
+
+.hover\:bg-sky-900:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(12 74 110 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-white\/10:hover{
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+.hover\:bg-white\/5:hover{
+  background-color: rgb(255 255 255 / 0.05);
+}
+
+.hover\:text-zinc-200:hover{
+  --tw-text-opacity: 1;
+  color: rgb(228 228 231 / var(--tw-text-opacity));
+}
+
+.hover\:shadow-lg:hover{
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.hover\:shadow-black\/20:hover{
+  --tw-shadow-color: rgb(0 0 0 / 0.2);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.focus\:outline:focus{
+  outline-style: solid;
+}
+
+.group:hover .group-hover\:block{
+  display: block;
+}
+
+.group.open .group-open\:-top-2{
+  top: -0.5rem;
+}
+
+.group.open .group-open\:top-2{
+  top: 0.5rem;
+}
+
+.group.open .group-open\:block{
+  display: block;
+}
+
+.group.open .group-open\:-rotate-45{
+  --tw-rotate: -45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group.open .group-open\:rotate-45{
+  --tw-rotate: 45deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group.open .group-open\:opacity-0{
+  opacity: 0;
+}
+
+.peer.open ~ .peer-open\:block{
+  display: block;
+}
+
+.dark\:inline:is(.dark *){
+  display: inline;
+}
+
+.dark\:hidden:is(.dark *){
+  display: none;
+}
+
+.dark\:bg-zinc-200:is(.dark *){
+  --tw-bg-opacity: 1;
+  background-color: rgb(228 228 231 / var(--tw-bg-opacity));
+}
+
+.dark\:bg-zinc-900:is(.dark *){
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+}
+
+.dark\:text-zinc-200:is(.dark *){
+  --tw-text-opacity: 1;
+  color: rgb(228 228 231 / var(--tw-text-opacity));
+}
+
+.dark\:text-zinc-900:is(.dark *){
+  --tw-text-opacity: 1;
+  color: rgb(24 24 27 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px){
+  .md\:flex{
+    display: flex;
+  }
+
+  .md\:hidden{
+    display: none;
+  }
+
+  .md\:min-w-\[40\%\]{
+    min-width: 40%;
+  }
+}

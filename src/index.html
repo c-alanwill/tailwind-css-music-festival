@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <script defer src="./assets/fontawesome/js/fontawesome.min.js"></script>
+    <script defer src="./assets/fontawesome/js/solid.min.js"></script>
+    <script>
+      window.onload = () => {
+        const mobileMenuIcon = document.getElementById("mobile-menu-button");
+        mobileMenuIcon.addEventListener("click", () => {
+          if(mobileMenuIcon.classList.contains("open")) {
+            mobileMenuIcon.classList.remove("open")
+          } else {
+            mobileMenuIcon.classList.add("open")
+          }
+        })
+        const ticketMenuItem = document.getElementById("ticket-menu-item");
+        ticketMenuItem.addEventListener("click", () => {
+          if(ticketMenuItem.classList.contains("open")) {
+            ticketMenuItem.classList.remove("open")
+          } else {
+            ticketMenuItem.classList.add("open")
+          }
+        });
+
+        const darkModeToggle = document.getElementById("dark-mode-toggle");
+        darkModeToggle.addEventListener("click", () => {
+          if(document.body.classList.contains("dark")) {
+            document.body.classList.remove("dark")
+          } else {
+            document.body.classList.add("dark")
+          }
+        });
+
+        const previousButton = document.getElementById("previous");
+        const nextButton = document.getElementById("next");
+        const carousel = document.getElementById("carousel");
+        nextButton.addEventListener("click", () => {
+          const itemWidth = carousel.getElementsByTagName("div")[0].clientWidth;
+          carousel.scrollLeft = carousel.scrollLeft + itemWidth; 
+        });
+        previousButton.addEventListener("click", () => {
+          const itemWidth = carousel.getElementsByTagName("div")[0].clientWidth;
+          carousel.scrollLeft = carousel.scrollLeft - itemWidth; 
+        }); 
+      }
+    </script>
+    <title>Document</title>
+  </head>
+  <!-- default of body is dark mode -->
+  <body class="dark">
+    <main class="bg-zinc-200 dark:bg-zinc-900">
+      <!-- HEADER NAV & HERO SECTION -->
+      <header class="text-zinc-200">
+        <!-- dark mode toggle button-->
+        <button id="dark-mode-toggle" class=" z-10 fixed top-24 right-0 inline-block w-12 cursor-pointer rounded-l-lg bg-zinc-900 dark:bg-zinc-200 text-zinc-200 dark:text-zinc-900 p-2 text-3xl "> <i class="fa-solid fa-sun dark:hidden"></i> <i class="fa-solid fa-moon hidden dark:inline"></i> </button>
+        <!-- navigation header -->
+        <nav
+          class="sticky flex top-0 bg-gradient-to-r from-rose-500 to-pink-500 z-10">
+          <!-- left side of nav -->
+          <div class="flex items-center p-2 gap-8">
+            <img src="./assets/images/logo-inverted.png" width="50" />
+            <div class="font-bold text-2xl">
+              tw:<span class="text-sky-900">mf</span>
+            </div>
+          </div>
+          <!-- nav menu mobile -->
+          <div class="block ml-auto pr-4 my-auto cursor-pointer">
+            <!-- nav menu hamburger button -->
+            <div id="mobile-menu-button" class="group peer md:hidden">
+              <div class="top-0 w-8 bg-zinc-200 rounded-full h-1 group-open:rotate-45 transition-all group-open:top-2 relative "></div>
+              <div class="w-8 bg-zinc-200 rounded-full h-1 mt-1 opacity-100 group-open:opacity-0 transition-all"></div>
+              <div class="top-0 w-8 bg-zinc-200 rounded-full h-1 mt-1 group-open:-rotate-45 transition-all group-open:-top-2 relative">
+              </div>
+            </div>
+            <!-- nav menu hamburger dropdown mobile -->
+            <div class="hidden absolute top-[62px] bg-gradient-to-r from-rose-500 to-pink-500 w-full left-0 peer-open:block " >
+              <div class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10 hover:text-zinc-200">
+                <span>Home</span>
+              </div>
+              <div class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10 hover:text-zinc-200">
+                <span>Lineup</span>
+              </div>
+              <div id="ticket-menu-item" class="group relative h-full cursor-pointer text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10 hover:text-zinc-200">
+                <div class="p-4 text-center font-bold">Tickets</div>
+                <div class="hidden group-open:block">
+                  <!-- tickets submenu -->
+                  <div
+                     class="text-center p-4 relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transition-colors ease-in-out"><span>Single day ticket</span>
+                  </div>
+                  <div class="text-center p-4 relative text-pink-200 hover:text-zinc-200 hover:bg-white/5 transition-colors ease-in-out"><span>7 day ticket</span>
+                  </div>
+                </div>
+              </div>
+              <div class="relative flex h-full cursor-pointer items-center justify-center p-4 font-bold text-pink-200 hover:text-zinc-200 transition-colors hover:bg-white/10 hover:text-zinc-200">
+                <span>Support</span>
+              </div>
+            </div>
+          <!-- nav menu desktop -->
+          <ul class="hidden flex-1 items-center justify-end md:flex">
+            <li class="menu-item">
+              <span>Home</span>
+            </li>
+            <li class="menu-item">
+              <span>Lineup</span>
+            </li>
+            <li class="menu-item group">
+              <span>Tickets</span>
+              <div
+                class="group-hover:block absolute top-full right-0 hidden whitespace-nowrap rounded-b-md bg-pink-500 text-right"
+              >
+                <!-- dropdown from tickets tab on nav desktop -->
+                <div
+                  class="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-pink-200"
+                >
+                  <span>Single day ticket</span>
+                </div>
+                <div
+                  class="p-4 font-bold hover:bg-white/5 hover:text-zinc-200 transition-colors ease-in-out cursor-pointer text-pink-200"
+                >
+                  <span>7 day ticket</span>
+                </div>
+              </div>
+            </li>
+            <li class="menu-item">
+              <span>Support</span>
+            </li>
+          </ul>
+        </nav>
+        <!-- HERO -->
+        <!-- hero image -->
+        <div style="background-image: url(./assets/images/hero.jpg)"
+          class="bg-cover bg-center bg-fixed flex flex-col items-center justify-center h-[calc(100vh-200px)] min-h-[400px]">
+          <!-- hero logo blurred background -->
+          <div class="bg-white/30 py-2 px-4 rounded-xl text-center backdrop-blur-md">
+            <!-- hero logo image -->
+            <div class="relative">
+              <img src="./assets/images/logo.png" width="175" alt="">
+              <div class="flex items-center justify-center mt-[-70px] mb-5">
+                <!-- sound wave bars -->
+                <div class="bg-pink-500 w-14 h-14 rounded-full flex items-center justify-center gap-1">
+                  <div class="h-2 w-1 bg-pink-300 rounded-full animate-wavey"></div>
+                  <div class="h-3 w-1 bg-pink-200 rounded-full animate-wavey delay-200"></div>
+                  <div class="h-4 w-1 bg-pink-100 rounded-full animate-wavey delay-[150ms]"></div>
+                  <div class="h-3 w-1 bg-pink-200 rounded-full animate-wavey delay-300"></div>
+                  <div class="h-2 w-1 bg-pink-300 rounded-full animate-wavey delay-[75ms]"></div>
+                </div>
+              </div>
+            </div>
+            <!-- hero logo text -->
+            <div class="text-5xl font-bold">
+              tw:<span class="text-sky-900">mf</span>
+            </div>
+          </div>
+          <!-- email form -->
+          <form action="" class="mt-5">
+            <!-- email form label -->
+            <label for="emailInput" class="font-bold mt-2 text-sm">
+              Keep me updated with news and promotions
+            </label>
+            <!-- email form input & submit button -->
+            <div class="mt-3 flex gap-2">
+              <!-- email form input -->
+              <input type="email" id="emailInput" placeholder="Email" name="email" class="rounded-sm border-white/40 bg-white/30 backdrop-blur-md p-2 font-bold text-sky-900 placeholder-zinc-500 caret-pink-500 outline-pink-500 focus:outline">
+              <!-- email submit button -->
+              <button type="submit" class="cursor-pointer rounded-sm bg-pink-500 py-2 px-4 font-bold transition-colors hover:bg-sky-900 hover:shadow-lg hover:shadow-black/20">
+                Subscribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </header>
+      <!-- HEADLINERS SECTION -->
+      <section class="max-w-screen-lg mx-auto mt-20 text-zinc-900 dark:text-zinc-200">
+        <h2>
+          Headliners
+        </h2>
+        <p>
+          Experience the sonic delight from these made-up artists across 7 days that music fans are calling "one of the many gigs that will happen this year."
+        </p>
+        <!-- headliners carousel -->
+        <div class="flex">
+          <!-- carousel previous arrow -->
+          <div id="previous" class="text-5xl flex justify-center items-center cursor-pointer p2 relative -top-8">
+            <i class="fas fa-angle-left"></i>
+          </div>
+          <!-- carousel content -->
+          <div id="carousel" class="scroll-smooth flex-1 mt-4 flex w-full gap-4 pb-5 snap-x overflow-x-auto">
+            <!-- card 1 -->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <!-- card image & text -->
+              <div style="background-image: url(./assets/images/band1.jpg)" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Corduroy Gary</h5>
+              <h6>1st of July 9pm - Main Stage</h6>
+            </div>
+            <!-- card 2-->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <!-- card image & text -->
+              <div style="background-image: url(./assets/images/band2.jpg)" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Corduroy Gary</h5>
+              <h6>1st of July 9pm - Main Stage</h6>
+            </div>
+            <!-- card 3-->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <!-- card image & text -->
+              <div style="background-image: url(./assets/images/band3.jpg)" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Corduroy Gary</h5>
+              <h6>1st of July 9pm - Main Stage</h6>
+            </div>
+            <!-- card 4-->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <!-- card image & text -->
+              <div style="background-image: url(./assets/images/band4.jpg)" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Corduroy Gary</h5>
+              <h6>1st of July 9pm - Main Stage</h6>
+            </div>
+            <!-- card 5-->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <!-- card image & text -->
+              <div style="background-image: url(./assets/images/band5.jpg)" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Corduroy Gary</h5>
+              <h6>1st of July 9pm - Main Stage</h6>
+            </div>
+            <!-- card 6-->
+            <div class="min-w-[80%] md:min-w-[40%]">
+              <!-- card image & text -->
+              <div style="background-image: url(./assets/images/band6.jpg)" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Corduroy Gary</h5>
+              <h6>1st of July 9pm - Main Stage</h6>
+            </div>
+             <!-- card 7-->
+             <div class="min-w-[80%] md:min-w-[40%]">
+              <!-- card image & text -->
+              <div style="background-image: url(./assets/images/band7.jpg)" class="h-80 w-full snap-center rounded-xl bg-cover bg-center shadow-md shadow-black/20"></div>
+              <h5 class="mt-2">Corduroy Gary</h5>
+              <h6>1st of July 9pm - Main Stage</h6>
+            </div>
+          </div>
+          <!-- carousel next arrow -->
+          <div id="next" class="text-5xl flex justify-center items-center cursor-pointer p4 relative -top-8">
+            <i class="fas fa-angle-right"></i>
+          </div>
+        </div>
+      </section>
+      <!-- LINEUP SECTION -->
+      <section class="max-w-screen-lg mx-auto text-zinc-900 dark:text-zinc-200">
+        <h2 class="mt-20">Lineup</h2>
+        <p>Follow the timetable and stage to makesure you don't miss your favorite artist.</p>
+        <!-- timeline container -->
+        <div class="rounded-lg relative mt-5 bg-zinc-800 py-4 px-2 text-zinc-200">
+          <!-- vertical timeline bar -->
+          <div class="absolute top-0 left-1/2 w-4 -ml-[8px] h-full rounded-full bg-gradient-to-b from-sky-900 via-cyan-900 to-teal-900">
+            <!-- red dot on vertical timeline bar -->
+            <div class="sticky top-1/2">
+              <div class="relative h-4 w-4">
+                <div class="absolute h-4 w-4 animate-ping rounded-full bg-pink-500 opacity-75"></div>
+                <div class="bg-rose-500 rounded-full relative h-4 w-4"></div>
+              </div>
+          </div>
+          </div>
+          <!-- timeline data -->
+          <div class="grid grid-cols-2 gap-8">
+            <!-- July 1st data -->
+            <div class="p-2 bg-zinc-900 rounded-lg my-4">
+              <h4>July 1st</h4>
+            </div>
+            <div></div>
+            <div class="text-right">
+              <div class="font-bold">Jackie Chaston</div>
+              <div class="text-zinc-400">6pm - Sage Stage</div>
+            </div>
+            <div></div>
+            <div></div>
+            <div class="text-left">
+              <div class="font-bold">Jennifer Connelly</div>
+              <div class="text-zinc-400">7pm - Platform 9 Stage</div>
+            </div>
+            <div class="text-right">
+              <div class="font-bold">The Slimy Diamonds</div>
+              <div class="text-zinc-400">8pm - Main Stage</div>
+            </div>
+            <div></div>
+            <div></div>
+            <div class="text-left">
+              <div class="font-bold">Corduroy Gary</div>
+              <div class="text-zinc-400">9pm - Main Stage</div>
+            </div>
+            <!-- July 2nd data -->
+            <div class="p-2 bg-zinc-900 rounded-lg my-4">
+              <h4>July 2nd</h4>
+            </div>
+            <div></div>
+            <div class="text-right">
+              <div class="font-bold">The Dastardly Spaniard</div>
+              <div class="text-zinc-400">7pm - Sage Stage</div>
+            </div>
+            <div></div>
+            <div></div>
+            <div class="text-left">
+              <div class="font-bold">Jennifer Connelly's Cousin</div>
+              <div class="text-zinc-400">8pm - Platform 9 Stage</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- TICKETS TABLE SECTION -->
+      <section class="max-w-screen-lg mx-auto text-zinc-900 dark:text-zinc-200">
+        <!-- table header -->
+        <h2 class="mt-20">Tickets</h2>
+        <!-- tickets table -->
+        <table class="mt-5 table w-full border border-zinc-500 border-collapse">
+          <thead class="text-lg font-bold">
+            <td class="border border-zinc-500 p-3">Tickets</td>
+            <td class="border border-zinc-500 p-3">Price</td>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-zinc-500 py-2 px-3">Single day ticket</td>
+              <td class="border border-zinc-500 py-2 px-3">$30</td>
+            </tr>
+            <tr>
+              <td class="border border-zinc-500 py-2 px-3">7 day ticket</td>
+              <td class="border border-zinc-500 py-2 px-3">$10</td>
+            </tr>
+          </tbody>
+          <caption class="caption-bottom pt-3">Once they're gone, they're gone!</caption>
+        </table>
+      </section>
+    </main>
+    <div class="btn">
+      Some Button
+    </div>
+  </body>
+</html>
